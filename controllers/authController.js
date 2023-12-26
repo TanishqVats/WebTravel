@@ -46,16 +46,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
     createSendToken(newUser, 201, res);
 
-    // const token = signToken(newUser._id);
-
-    // res.status(201).json({
-    //     status: '201',
-    //     token,
-    //     data: {
-    //         user: newUser
-    //     }
-    // });
-});
+    
 
 exports.login = catchAsync(async (req, res, next) => {
     const { email, password } = req.body;
@@ -76,13 +67,6 @@ exports.login = catchAsync(async (req, res, next) => {
 
     createSendToken(user, 200, res);
 
-    // const token = signToken(user._id);
-
-    // res.status(200).json({
-    //     status: `success`,
-    //     token
-    // });
-});
 
 exports.protect = catchAsync(async (req, res, next) => {
     // 1) Getting token and check if its there
